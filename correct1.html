@@ -213,10 +213,10 @@
                     </button>
                 
                     <h5 id="status" style="color: rgb(177, 165, 165);">Press the button and say "Odogwu please"</h5>
-                    <br> 
+                    
 
 
-                    <p style="color: rgb(248, 243, 243);" >Talk am well oh if not that <br> you no dey go any where 😊</p>
+                    <p style="color: rgb(248, 243, 243);" >Talk am well oh if not  <br> you no dey go any where 😊</p>
                     
                     <br>
                     <p id="result" style="color: white; size: 40px;"></p>
@@ -241,12 +241,11 @@
                                 const transcript = event.results[0][0].transcript.toLowerCase();
                 
                                 if (transcript.includes("please")) {
-                                    resultText.innerHTML = "Achalugo so you fit dey humble like this 😂.";
-
+                                    resultText.innerHTML = "Achalugo so you fit dey humble <br> like this 😂.";
                                                                     // Wait for 2 seconds, then redirect
                                 setTimeout(() => {
                                     window.location.href = "choice.html";
-                                }, 5000);
+                                }, 6000);
                                 } else {
                                     resultText.innerHTML = "❌ Say 'Odogwu please' to proceed!";
                                 }
