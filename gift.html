@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; position: relative; overflow-x: hidden; }
+        .bg-overlay { background: rgba(0, 0, 0, 0.5); }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .option img {
+                width: 100px;
+                height: 100px;
+            }
+            .option p {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .option img {
+                width: 80%;
+                height: 80%;
+            }
+            .option p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white p-4"> 
+
+<!-- Hidden Form -->
+<form id="selectionForm" action="https://formspree.io/f/xjvqwezg" method="POST" class="hidden">
+    <input type="text" id="selectedOption" name="message">
+</form>
+
+<!-- Game Section -->
+<section id="game" class="py-8 text-center" data-aos="fade-up">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div onclick="selectOption('Watch Any Movie of your Choice', '#')" class="option transform hover:scale-105 transition flex flex-col items-center cursor-pointer p-4">
+            <img src="a824dc8c867e8c3e3404d99a023ff634.jpeg" class="rounded-lg shadow-lg w-32 md:w-48 h-32 md:h-48 object-cover" alt="Movie">
+            <p class="text-lg font-semibold mt-2 text-center">Watch Any Movie of your Choice</p>
+        </div>
+
+        <div onclick="selectOption('Ice Cream', '#')" class="option transform hover:scale-105 transition flex flex-col items-center cursor-pointer p-4">
+            <img src="Strawberry_ice_cream_cone_(5076899310).jpg" class="rounded-lg shadow-lg w-32 md:w-48 h-32 md:h-48 object-cover" alt="Ice Cream">
+            <p class="text-lg font-semibold mt-2 text-center">Ice Cream</p>
+        </div>
+
+        <div onclick="selectOption('Take you Out', '#')" class="option transform hover:scale-105 transition flex flex-col items-center cursor-pointer p-4">
+            <img src="outing.png" class="rounded-lg shadow-lg w-32 md:w-48 h-32 md:h-48 object-cover" alt="Outing">
+            <p class="text-lg font-semibold mt-2 text-center">Take you Out</p>
+        </div>
+
+        <div onclick="selectOption('Abi make i go warm eba chop ?', '#')" class="option transform hover:scale-105 transition flex flex-col items-center cursor-pointer p-4">
+            <img src="download.jpeg" class="rounded-lg shadow-lg w-32 md:w-48 h-32 md:h-48 object-cover" alt="Eba">
+            <p class="text-lg font-semibold mt-2 text-center">Abi make i go warm eba chop ?</p>
+        </div>
+    </div>
+</section>
+
+<!-- Guest Messages -->
+<section id="messages" class="py-8 text-center" data-aos="fade-up">
+    <h2 class="font-bold text-lg">Achalugo if wetin you want no dey here,  tell your ODOGWU wetin you want.</h2>
+    
+    <!-- Formspree Form -->
+    <form id="guestMessageForm" action="https://formspree.io/f/xjvqwezg" method="POST" class="mt-4 max-w-sm mx-auto flex items-center bg-pink-200 rounded-full overflow-hidden shadow-lg">
+        <input type="text" name="guestMessage" id="guestMessageInput" placeholder="Write a message..." required 
+            class="px-4 py-3 flex-1 text-gray-700 border-none outline-none bg-transparent">
+        
+        <button type="submit" class="px-4 py-3 bg-pink-500 text-white flex items-center rounded-r-full hover:bg-pink-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
+            </svg>
+        </button>
+    </form>
+</section>
+
+<script>
+    document.getElementById("guestMessageForm").addEventListener("submit", function(event) {
+        let messageInput = document.getElementById("guestMessageInput");
+        
+        if (!messageInput.value.trim()) {
+            event.preventDefault(); // Prevent submission if input is empty
+            alert("Please enter a message before submitting.");
+        }
+    });
+</script>
+
+<script>
+    function selectOption(optionText, redirectUrl) {
+        document.getElementById("selectedOption").value = optionText;
+        document.getElementById("selectionForm").submit();
+
+        // Redirect after form submission
+        setTimeout(() => {
+            if (redirectUrl !== '#') {
+                window.location.href = redirectUrl;
+            }
+        }, 500);
+    }
+</script>
+
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

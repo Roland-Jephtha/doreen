@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; position: relative; overflow-x: hidden; }
+        .bg-overlay { background: rgba(0, 0, 0, 0.5); }
+        .falling-emoji { 
+            position: absolute; 
+            font-size: 2rem; 
+            animation: fall linear infinite; 
+            top: -10vh;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"> 
+
+    <!-- Game Section -->
+    <section id="game" class="py-16 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-white" style="">So you finally agreed,  now say Odogwu plss 😂</h2>
+
+
+
+
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Centered Mic Button</title>
+            <style>
+                /* Center content vertically and horizontally */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh; /* Full viewport height */
+                    margin: 0;
+                    text-align: center;
+                }
+        
+                /* Style for the mic button */
+                #startBtn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 80px;
+                    height: 80px;
+                    background-color: #007bff;
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: background 0.3s ease-in-out;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+                }
+        
+                #startBtn:hover {
+                    background-color: #0056b3;
+                }
+        
+                /* Circle styling for mic icon */
+                .mic-icon {
+                    width: 60px;
+                    height: 60px;
+                    background-color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                }
+        
+                /* SVG (microphone icon) styling */
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: #007bff;
+                }
+        
+                /* Styling for status and result text */
+                #status, #result {
+                    font-size: 18px;
+                    margin-top: 20px;
+                    color: #333;
+                }
+        
+                #result {
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #007bff;
+                }
+
+                #micButton {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 250px) and (max-width: 400px) {
+            #micButton {
+
+                margin-left: -2em;
+            
+        }}
+    
+        @media (min-width: 250px) and (max-width: 380px) {
+            #micButton {
+
+                margin-left: -1em;
+            
+        }
+    
+    }
+    </style>
+
+
+
+        </head>
+        <body>
+            <div id="micButton"> 
+
+                <br>
+        
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Speech Recognition</title>
+                    <style>
+                        body {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            background-color: #222;
+                            color: white;
+                            font-family: Arial, sans-serif;
+                        }
+                
+                        /* Button styling */
+                        #startBtn {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 80px;
+                            height: 80px;
+                            background-color: #007bff;
+                            border: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: background 0.3s ease-in-out;
+                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+                        }
+                
+                        /* Change button background when active */
+                        #startBtn.active {
+                            background-color: #28a745; /* Green while listening */
+                        }
+                
+                        /* Mic icon */
+                        .mic-icon svg {
+                            width: 40px;
+                            height: 40px;
+                            fill: rgb(36, 4, 4); /* Default color */
+                            transition: fill 0.3s ease-in-out;
+                        }
+                
+                        /* Change mic icon color when active */
+                        #startBtn.active .mic-icon svg {
+                            fill: #28a745; /* Green while listening */
+                        }
+                
+                        /* Status text */
+                        #status {
+                            font-size: 18px;
+                            margin-top: 20px;
+                        }
+                
+                        /* Result text */
+                        #result {
+                            font-size: 20px;
+                            font-weight: bold;
+                            margin-top: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                
+                    <button id="startBtn">
+                        <span class="mic-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                                <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+                                <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+                            </svg>
+                        </span>
+                    </button>
+                
+                    <h5 id="status" style="color: rgb(177, 165, 165);">Press the button and say "Odogwu please"</h5>
+                    <br> 
+
+
+                    <p style="color: rgb(248, 243, 243);" >Talk am well oh if not that you no dey go any where 😊</p>
+                    
+                    <br>
+                    <p id="result" style="color: white; size: 60px;"></p>
+                
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                            recognition.continuous = false;
+                            recognition.lang = "en-US"; // Adjust based on user's accent
+                
+                            const startBtn = document.getElementById("startBtn");
+                            const statusText = document.getElementById("status");
+                            const resultText = document.getElementById("result");
+                
+                            startBtn.addEventListener("click", () => {
+                                startBtn.classList.add("active"); // Change button and icon to green
+                                statusText.innerText = "Listening...";
+                                recognition.start();
+                            });
+                
+                            recognition.onresult = function (event) {
+                                const transcript = event.results[0][0].transcript.toLowerCase();
+                
+                                if (transcript.includes("please")) {
+                                    resultText.innerHTML = "Achalugo so you fit dey humble like this 😂.";
+
+                                                                    // Wait for 2 seconds, then redirect
+                                setTimeout(() => {
+                                    window.location.href = "choice.html";
+                                }, 5000);
+                                } else {
+                                    resultText.innerHTML = "❌ Say 'Odogwu please' to proceed!";
+                                }
+                
+                                // Reset button and icon color after success or failure
+                                setTimeout(() => {
+                                    startBtn.classList.remove("active");
+                                    statusText.innerText = "Press the button and say 'Odogwu please'";
+                                }, 1500);
+                            };
+                
+                            recognition.onerror = function () {
+                                statusText.innerText = "Error occurred. Try again.";
+                                startBtn.classList.remove("active");
+                            };
+                
+                            recognition.onend = function () {
+                                startBtn.classList.remove("active"); // Reset color when speech ends
+                            };
+                        });
+                    </script>
+                
+                </body>
+                </html>
+                
+
+
+        
+ 
+    </section>
+
+    <script>
+        AOS.init();
+
+        document.getElementById("showMoreBtn").addEventListener("click", function() {
+            document.getElementById("moreOptions").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; position: relative; overflow-x: hidden; }
+        .bg-overlay { background: rgba(0, 0, 0, 0.5); }
+        .falling-emoji { 
+            position: absolute; 
+            font-size: 2rem; 
+            animation: fall linear infinite; 
+            top: -10vh;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+
+
+
+              /* Media Queries for Responsive Images */
+              @media (max-width: 640px) {
+            .option img { width: 80%; height: 80%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"> 
+
+ 
+ <!-- Game Section -->
+<section id="game" class="py-16 text-center" data-aos="fade-up">
+    <h1 class="text-4xl font-bold text-white">Who am I to you?</h1>
+
+    <div class="mt-8 grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <!-- Wrong answers -->
+        <a href="correct1.html" class="option transform hover:scale-105 transition flex flex-col items-center">
+            <img src="images (1).jpeg" class="rounded-lg shadow-lg w-48 h-48 object-cover" alt="Beans">
+            <p class="text-lg font-semibold mt-2 text-white-700 text-center">Odogwu</p>
+        </a>
+
+        <a href="wrong1.html" class="option transform hover:scale-105 transition flex flex-col items-center">
+            <img src="UfBd6-2K_400x400.jpg" class="rounded-lg shadow-lg w-48 h-48 object-cover" alt="Akpu">
+            <p class="text-lg font-semibold mt-2 text-white-700 text-center">Achalugo</p>
+        </a>
+    </div>
+</section>
+
+    
+ 
+    
+
+
+    <!-- Footer -->
+    <!-- <footer class="py-6 text-center bg-gray-800">
+        <p>&copy; 2025 Matriculation Celebration</p>
+    </footer>
+     -->
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

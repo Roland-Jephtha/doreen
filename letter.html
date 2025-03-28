@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; position: relative; overflow-x: hidden; }
+        .bg-overlay { background: rgba(0, 0, 0, 0.5); }
+        .falling-emoji { 
+            position: absolute; 
+            font-size: 2rem; 
+            animation: fall linear infinite; 
+            top: -10vh;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+        .letter-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: justify;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            color: #333;
+        }
+        @media (min-width: 500px) and (max-width: 768px) {
+            .letter-container {
+                width: 25em;
+                padding: 15px;
+            }
+            h2 { font-size: 1.4rem; }
+            p { font-size: 1rem; }
+        }
+        @media (min-width: 280px) and (max-width: 480px) {
+            .letter-container {
+                width: 20em;
+                padding: 10px;
+            }
+            h2 { font-size: 1.2rem; }
+            p { font-size: 0.9rem; }
+        }
+        .show { opacity: 1; transform: translateY(0); }
+        h2 { text-align: center; color: #8b4513; }
+        .btn-container { text-align: center; margin-top: 20px; }
+        .reveal-btn {
+            background: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .reveal-btn:hover { background: #6b3211; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const emojis = ['💖', ];
+            for (let i = 0; i < 10; i++) {
+                let emoji = document.createElement("div");
+                emoji.classList.add("falling-emoji");
+                emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + "vw";
+                emoji.style.animationDuration = Math.random() * 8 + 8 + "s";
+                document.body.appendChild(emoji);
+            }
+        });
+    </script>
+    
+    <section class="w-full min-h-screen flex flex-col items-center justify-center text-center gap-6 p-4">
+        <div class="flex flex-col items-center justify-center w-full pb-20">
+            <button class="reveal-btn" onclick="showLetter()">Open 💌</button>
+        </div>
+    </section>
+
+    <div id="letter-container" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden p-4">
+        <div id="letter" class="letter-container">
+            <h2>Dear Doreen🌸,</h2>
+            <p>
+                I know you probably weren’t expecting a letter from me, but here we are. There’s something about putting thoughts into words on paper (or screen) that makes things clearer, so here goes nothing.
+            </p>
+            <p>
+                First off, let me say—you stress me. A lot. But somehow, in between all the back and forth, the jokes, and the wahala, I find myself enjoying it. You can be stubborn, and honestly, sometimes it feels like you just enjoy making things difficult before agreeing to the obvious. But despite that, there’s something about you that keeps me interested.
+            </p>
+            <p>
+                You’ve been on my mind a lot lately, not just as a friend or someone I banter with, but as someone I genuinely care about. And honestly? That’s why I wanted to see you in person the other day—to just say it as it is. But since you preferred chat, here I am, writing it instead.
+            </p>
+            <p>
+                I don’t know what you’ll do with this letter—laugh, ignore, or overanalyze it like you do everything—but whatever happens, just know this: I meant every word.
+            </p>
+            <p style="text-align: right; font-weight: bold;">— Jephtha.</p>
+            <div class="text-center mt-4">
+                <button class="reveal-btn" onclick="closeLetter()">Close 📧</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showLetter() {
+            document.getElementById("letter-container").classList.remove("hidden");
+            document.getElementById("letter").classList.add("show");
+            document.querySelector(".reveal-btn").style.display = "none";
+        }
+
+        function closeLetter() {
+            document.getElementById("letter-container").classList.add("hidden");
+            document.getElementById("letter").classList.remove("show");
+            document.querySelector(".reveal-btn").style.display = "block";
+        }
+    </script>
+
+    
+    <script>AOS.init();</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; position: relative; overflow-x: hidden; }
+        .bg-overlay { background: rgba(0, 0, 0, 0.5); }
+        .falling-emoji { 
+            position: absolute; 
+            font-size: 2rem; 
+            animation: fall linear infinite; 
+            top: -10vh;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"> 
+
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+ 
+ <!-- Game Section -->
+<section id="game" class="py-16 text-center" data-aos="fade-up">
+
+    <h1 class="text-2xl font-bold text-white-600">Na your turn to go warm eba chop Achalugo🙄</h1>
+     <br> <br> 
+    <a href="index.html" class="mt-6 px-6 py-3 bg-blue-500 text-white rounded-full">Try Again</a>
+</section>
+
+    
+ 
+    
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

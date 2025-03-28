@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matriculation Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            position: relative; 
+            overflow-x: hidden;
+            background-color: #1f2937;
+            color: white;
+        }
+        .bg-overlay { 
+            background: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .falling-emoji { 
+            position: fixed; 
+            font-size: 1.5rem; 
+            animation: fall linear infinite; 
+            top: -10vh;
+            z-index: 0;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+        
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        #hero-text {
+            z-index: 10;
+            max-width: 90%;
+            width: 100%;
+        }
+        
+        #choice {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .option {
+            width: 45%;
+            max-width: 250px;
+        }
+        
+        .option img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 640px) {
+            #hero-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            #hero-text p {
+                font-size: 1rem;
+            }
+            
+            #choice {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option {
+                width: 70%;
+                max-width: 300px;
+            }
+            
+            .falling-emoji {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 350px) {
+            #hero-text h1 {
+                font-size: 1.25rem;
+            }
+            
+            #hero-text p {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling Emojis Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const emojis = ['🎈', '🎉', '🎊'];
+            const emojiContainer = document.createElement("div");
+            emojiContainer.style.position = "fixed";
+            emojiContainer.style.top = "0";
+            emojiContainer.style.left = "0";
+            emojiContainer.style.width = "100%";
+            emojiContainer.style.height = "100%";
+            emojiContainer.style.pointerEvents = "none";
+            emojiContainer.style.zIndex = "0";
+            document.body.appendChild(emojiContainer);
+    
+            for (let i = 0; i < 30; i++) {
+                let emoji = document.createElement("div");
+                emoji.classList.add("falling-emoji");
+                emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + "vw";
+                emoji.style.animationDuration = Math.random() * 8 + 5 + "s";
+                emojiContainer.appendChild(emoji);
+            }
+        });
+    </script>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="bg-overlay"></div>
+        <div class="relative z-10 text-center" id="hero-text">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" data-aos="fade-down">
+                Congratulations, Barbie 🌸🥰
+            </h1>
+            <p class="text-base sm:text-lg mb-8" data-aos="fade-up">
+                On your Matriculation into Petroleum Training Institute (PTI)<br>
+                Computer Science Department
+            </p>
+        </div>
+
+        <div id="choice">
+            <a href="letter.html" class="option transform hover:scale-105 transition">
+                <img src="lettermain.jpg" alt="Letter" loading="lazy">
+            </a>
+            <a href="gift.html" class="option transform hover:scale-105 transition">
+                <img src="giftmain.jpg" alt="Gift" loading="lazy">
+            </a>
+        </div>
+    </section>
+
+
+    
+    <script>
+        AOS.init({
+            disable: window.innerWidth < 768 // Disable AOS on mobile
+        });
+    </script>
+</body>
+</html>
